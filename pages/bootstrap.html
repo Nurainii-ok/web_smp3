@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- CSS untuk Background dan Pengaturan Navbar -->
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            background-color: #21934A; /* Warna latar belakang navbar */
+        }
+
+        /* Mengatur ukuran logo */
+        .logo img {
+            width: 80px;  /* Menyesuaikan lebar logo */
+            height: auto; /* Menjaga rasio aspek logo */
+        }
+
+        /* Menambahkan sedikit margin antara logo dan teks */
+        .judul {
+            margin-left: 10px; /* Jarak antara logo dan teks */
+        }
+
+        /* Menghilangkan margin default dari h5 dan p */
+        .judul h5, .judul p {
+            margin: 0;
+            color: white;
+        }
+
+        /* Mengatur warna teks navbar menjadi putih */
+        .navbar-nav .nav-link {
+            color: white !important; /* Mengatur warna teks pada menu navbar menjadi putih */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFEB3B !important; /* Mengubah warna teks saat hover (opsional) */
+        }
+
+        .image-container .text-overlay {
+            position: absolute;
+            top: 20%; /* Menempatkan teks sedikit dari atas */
+            left: 10px; /* Menempatkan teks di sebelah kiri */
+            color: white;
+            font-size: 2rem; /* Ukuran font teks */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Menambahkan bayangan pada teks */
+            text-align: left; /* Menyelaraskan teks ke kiri */
+        }
+
+        /* Styling untuk teks p agar lebih tipis */
+        .image-container .text-overlay p {
+            font-weight: 300; /* Membuat teks lebih tipis */
+            font-size: 1.2rem; /* Ukuran font lebih kecil */
+            margin-top: 10px; /* Jarak antara teks atas dan bawah */
+        }
+        
+        /* Responsif untuk logo dan judul */
+        @media (max-width: 768px) {
+            .logo img {
+                width: 50px; /* Logo lebih kecil di perangkat kecil */
+            }
+            .judul h5 {
+                font-size: 1.2rem; /* Ukuran font judul lebih kecil */
+            }
+            .judul p {
+                font-size: 0.9rem; /* Ukuran font sub-judul lebih kecil */
+            }
+        }
+
+        /* Navbar items styling */
+        .navbar-nav {
+            flex-direction: row; /* Mengatur item navbar ke horizontal */
+        }
+
+        /* Responsive adjustments for Navbar items */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                text-align: center; /* Meratakan item navbar di tengah */
+                width: 100%; /* Mengambil lebar penuh */
+            }
+
+            .navbar-collapse {
+                justify-content: center; /* Memastikan item di tengah saat collapse */
+            }
+        }
+
+        /* Styling for the image container */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Sesuaikan tinggi gambar */
+            overflow: hidden;
+        }
+
+        /* Gambar di dalam kontainer */
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Gambar akan terpotong sesuai dengan kontainer */
+        }
+
+        /* Styling untuk teks di atas gambar */
+        .image-container .text-overlay {
+            position: absolute;
+            top: 20%; /* Menempatkan teks sedikit dari atas */
+            left: 10px; /* Menempatkan teks di sebelah kiri */
+            color: white;
+            font-size: 2rem; /* Ukuran font teks */
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Menambahkan bayangan pada teks */
+            text-align: left; /* Menyelaraskan teks ke kiri */
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="d-flex align-items-center w-100"> <!-- Flex container for logo and title -->
+                <!-- Logo and Title -->
+                <div class="logo me-3">
+                    <img src="foto/logo.png" alt="Logo">
+                </div>
+    
+                <div class="judul">
+                    <h5>SMP Negeri 3 Malang</h5>
+                    <p>Bina Taruna Adiloka</p>
+                </div>
+    
+                <!-- Navbar items moved to the right -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Profile Sekolah
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Perpustakaan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Kstrakurikuler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Berita</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Prestasi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Kontainer Gambar dengan Teks di sebelah kiri -->
+    <div class="image-container">
+        <img src="foto/Hero.png" alt="Hero Image">
+        <div class="text-overlay ps-5 pt-5">
+            Selamat Datang 
+            <br>
+            di SMP Negeri 3 Malang
+            <p>Bina Taruna Adiloka</p>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
